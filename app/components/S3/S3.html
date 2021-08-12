@@ -1,0 +1,245 @@
+<meta charset="UTF-8">
+<link rel="icon" href="data:image/x-icon;base64,">
+<title>Application Title</title>
+<link rel="stylesheet" href="app/styles/app-style.css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Wellkom | Be Well - Perform Well - Live Well Longer</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="app/styles/newcss.css">
+<link rel="stylesheet" href="app/styles/bootstrap.min.css">
+<link rel="stylesheet" href="app/styles/bootstrap-theme.min.css">
+<link rel="stylesheet" href="app/styles/fontAwesome.css">
+<link rel="stylesheet" href="app/styles/light-box.css">
+<link rel="stylesheet" href="app/styles/owl-carousel.css">
+<link rel="stylesheet" href="app/styles/templatemo-style.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
+<script src="https://aka.ms/csspeech/jsbrowserpackageraw"></script>
+<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<div class="page-content">
+            <section id="video" class="content-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-heading">
+                            <h1>Mastering the creative <em>distraction technique</em></h1>
+                        </div>
+                        <div class="text-content">
+                            <div class="section-heading">
+                            <ul>
+                            <li>The really good news is that you can start to practise and master this
+                        technique right now.</li>
+                      <li>Here is one way of learning creative distraction, sit quietly and with minimal
+                        bodily movement. Allow yourself to relax.</li>
+                      <li>Turn your attention outward to things around you, carefully look around
+                        and, in a calm and steady fashion, observing 4 different objects. Then
+                        describe each object to yourself in short simple sentences. Say what you
+                        actually see
+                    <ol>
+                        <li>"I see the light, yellow coloured outside edge of the lower-most leaf
+                            of the plant on the table"</li>
+                        <li>"I see the grey shading of my right sock just below my trouser leg".</li>
+                    </ol> 
+                    </li>
+                      <li>Do this without haste and in a smooth, continuous way</li>
+                      <li>Next turn your attention towards your auditory senses, notice what it is you
+                        are hearing, the sounds around you.
+                        <ol>
+                            <li>You may hear the gentle rustling sound of the motor that drives your
+                                computer ventilator. </li>
+                            <li>Take notice also of where that sound is coming from. </li>
+                            <li>“It is coming from the lower right of my body”</li>
+                            <li>It can be helpful to say what it is you are hearing and where it is.</li>
+                            <li>“I can hear a blackbird singing outside.”
+                            </li>
+                        </ol> 
+                    </li>
+                      <li>After a short break of about 30 seconds, move on to the sensations of
+                        touch, take note of any physical feelings, 
+                     <ol> 
+                         <li>the different textures of your clothes
+                        </li>
+                         <li>the pressure of your body against a chair</li>
+                         <li>the slight numbing around your right hand when it is perched above
+                            the computer keyboard.</li>
+                     </ol>
+                    </li>
+                      <li>Another method is to picture the goal you are trying to achieve if unwanted
+                        or negative thoughts enter your mind, if you are thinking about eating
+                        chocolate, then concentrate on seeing yourself slimmer and thinking about
+                        how you will feel when you reach your desired weight.</li>
+                        <br>
+                        <p>When and where are you going to do your 1st creative distraction practice
+                            session? <button  style="background-color: transparent;border:none;" id="newbtn1"><i class="fa fa-microphone" aria-hidden="true"></i></button>
+</p>
+<div id="newcolumn1" style="display:none">
+    <table  width="100%">
+      <tr>
+        <td><input id="subscriptionKey" type="hidden" type="text" size="40" value="bea8ac191ce041ecbcabc85e062630f5"></td>
+      </tr>
+      <tr>
+        <td><input type="hidden" id="serviceRegion" type="text" size="40" value="westeurope"></td>
+      </tr>
+      
+
+    </table>
+  </div>
+<form>
+<textarea  id="newtxt1" name="text" cols="100" rows="10" class="form-control"></textarea>
+</form>
+                        <br>
+                        <p>When? ► Date / Day <button  style="background-color: transparent;border:none;" id="newbtn2"><i class="fa fa-microphone" aria-hidden="true"></i></button>
+
+                        </p>
+<div id="newcolumn2" style="display:none">
+    <table  width="100%">
+      <tr>
+        <td><input id="subscriptionKey" type="hidden" type="text" size="40" value="bea8ac191ce041ecbcabc85e062630f5"></td>
+      </tr>
+      <tr>
+        <td><input type="hidden" id="serviceRegion" type="text" size="40" value="westeurope"></td>
+      </tr>
+      
+
+    </table>
+  </div>
+<form>
+<textarea  id="newtxt2" name="text" cols="100" rows="2" class="form-control"></textarea>
+</form>
+
+                            </ul>         
+            </section>
+</div>
+<script>
+
+    // status fields and start button in UI
+
+    var newtxt1,newtxt2;
+
+    var newbtn1,newbtn2;
+
+    // subscription key and region for speech services.
+    var subscriptionKey, serviceRegion, languageTargetOptions, languageSourceOptions;
+    var SpeechSDK;
+    var recognizerone;
+
+
+      newbtn1 = document.getElementById("newbtn1");
+      newbtn2 = document.getElementById("newbtn2");
+
+
+      subscriptionKey = document.getElementById("subscriptionKey");
+      serviceRegion = document.getElementById("serviceRegion");
+
+
+      newtxt1 = document.getElementById("newtxt1");
+      newtxt2 = document.getElementById("newtxt2");
+
+
+
+
+
+newbtn1.addEventListener("click", function () {
+        newbtn1.disabled = true;
+        newbtn1.style.color="red";
+        newtxt1.innerHTML = "";
+
+        if (subscriptionKey.value === "" || subscriptionKey.value === "subscription") {
+          alert("Please enter your Microsoft Cognitive Services Speech subscription key!");
+          newbtn1.disabled = false;
+          return;
+        }
+        var speechConfig = SpeechSDK.SpeechTranslationConfig.fromSubscription(subscriptionKey.value, serviceRegion.value);
+
+        speechConfig.speechRecognitionLanguage = "en-US";
+        let language = "en"
+        speechConfig.addTargetLanguage(language)
+
+        var audioConfig  = SpeechSDK.AudioConfig.fromDefaultMicrophoneInput();
+        recognizerone = new SpeechSDK.TranslationRecognizer(speechConfig, audioConfig);
+
+        recognizerone.recognizeOnceAsync(
+          function (result) {
+            newbtn1.disabled = false;
+            newbtn1.style.color="black";
+            let translation = result.translations.get(language);
+            window.console.log(translation);
+            newtxt1.innerHTML += translation;
+
+            recognizerone.close();
+            recognizerone = undefined;
+          },
+          function (err) {
+            newbtn1.disabled = false;
+            newbtn1.style.color="black";
+            newtxt1.innerHTML += err;
+            window.console.log(err);
+
+            recognizerone.close();
+            recognizerone = undefined;
+          });
+      });
+newbtn2.addEventListener("click", function () {
+        newbtn2.disabled = true;
+        newbtn2.style.color="red";
+        newtxt2.innerHTML = "";
+
+        if (subscriptionKey.value === "" || subscriptionKey.value === "subscription") {
+          alert("Please enter your Microsoft Cognitive Services Speech subscription key!");
+          newbtn2.disabled = false;
+          return;
+        }
+        var speechConfig = SpeechSDK.SpeechTranslationConfig.fromSubscription(subscriptionKey.value, serviceRegion.value);
+
+        speechConfig.speechRecognitionLanguage = "en-US";
+        let language = "en"
+        speechConfig.addTargetLanguage(language)
+
+        var audioConfig  = SpeechSDK.AudioConfig.fromDefaultMicrophoneInput();
+        recognizerone = new SpeechSDK.TranslationRecognizer(speechConfig, audioConfig);
+
+        recognizerone.recognizeOnceAsync(
+          function (result) {
+            newbtn2.disabled = false;
+            newbtn2.style.color="black";
+            let translation = result.translations.get(language);
+            window.console.log(translation);
+            newtxt2.innerHTML += translation;
+
+            recognizerone.close();
+            recognizerone = undefined;
+          },
+          function (err) {
+            newbtn2.disabled = false;
+            newbtn2.style.color="black";
+            newtxt2.innerHTML += err;
+            window.console.log(err);
+
+            recognizerone.close();
+            recognizerone = undefined;
+          });
+      });
+
+
+
+
+      if (!!window.SpeechSDK) {
+        SpeechSDK = window.SpeechSDK;
+        newbtn1.disabled=false;
+        newbtn1.style.color="black";
+        newbtn2.disabled=false;
+        newbtn2.style.color="black";
+
+
+        document.getElementById('newcolumn1').style.display = 'block';
+        document.getElementById('newcolumn2').style.display = 'block';
+
+
+        document.getElementById('warning').style.display = 'none';
+      }
+
+  </script>
